@@ -74,7 +74,7 @@ public class ZipCodeRestrictor {
                         input[i][j] = value;
                         break;
                     } else {
-                        System.out.println("Please enter the valid zip code");
+                        LOGGER.info("Please enter the valid zip code");
                     }
                 }
             }
