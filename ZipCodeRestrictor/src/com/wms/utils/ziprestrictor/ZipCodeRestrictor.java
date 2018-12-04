@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Stack;
+import java.util.logging.Logger;
 
 /**
  * This Utility class helps to produce the minimum number of Zip Code ranges
@@ -13,6 +14,8 @@ import java.util.Stack;
  *
  */
 public class ZipCodeRestrictor {
+    
+    private static final Logger LOGGER = Logger.getLogger( ZipCodeRestrictor.class.getName() );
 
     public static void main(String[] args) {
         Integer[][] input = getInput();
@@ -88,9 +91,10 @@ public class ZipCodeRestrictor {
      */
     public static void getResultSet(Stack<Integer[]> stack) {
         Iterator<Integer[]> iterator = stack.iterator();
+        LOGGER.info("The set of ranges are: ");
         while (iterator.hasNext()) {
             Integer[] res = iterator.next();
-            System.out.println(Arrays.toString(res));
+            LOGGER.info(Arrays.toString(res));
         }
     }
 }
